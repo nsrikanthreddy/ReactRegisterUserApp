@@ -13,8 +13,9 @@ function AllUsers() {
     //const host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
     const setUserData =()=>{
        // axios.get("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user")
-       axios.get(`https://app:8080/test/users`)       
-       //axios.get(`/test/users`)       
+       //axios.get(`https://app:8080/test/users`)       
+       //axios.get(`/test/users`)
+       axios.get(`http://localhost:8082/test/users`)
        .then(response => {       
           console.log(response)
           setUser(response.data)
@@ -32,7 +33,8 @@ function AllUsers() {
     const removeUser=(userId)=>{
         //axios.delete("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user/"+userId)
         //axios.delete(`http://${host}:8080/test/user/`+userId)
-        axios.delete(`/test/user/`+userId)
+        //axios.delete(`/test/user/`+userId)
+        axios.delete(``http://localhost:8082/test/user/`+userId)
         .then(response =>{
             setUserData();
         })
