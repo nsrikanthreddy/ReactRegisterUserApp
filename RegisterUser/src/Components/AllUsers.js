@@ -34,7 +34,7 @@ function AllUsers() {
         //axios.delete("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user/"+userId)
         //axios.delete(`http://${host}:8080/test/user/`+userId)
         //axios.delete(`/test/user/`+userId)
-        axios.delete(``http://localhost:8082/test/user/`+userId)
+        axios.delete(`http://localhost:8082/test/user/`+userId)
         .then(response =>{
             setUserData();
         })
