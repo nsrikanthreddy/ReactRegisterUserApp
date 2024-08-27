@@ -5,16 +5,16 @@ import { Link, useNavigate } from 'react-router-dom';
 function AllUsers() {
     const navigate= useNavigate();
     const[user, setUser]= useState([]);
-    const first_host = process.env.REACT_APP_HOST||"localhost"; 
-    
+   // const first_host = process.env.REACT_APP_HOST||"localhost"; 
+    const first_host = location.hostname;
 const second_host= document.baseURI;
 
 
-    const third_host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
+    //const third_host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
     const setUserData =()=>{
         console.log('first_host-->'+first_host);
         console.log('second_host-->'+second_host);
-        console.log('third_host-->'+third_host);
+        //console.log('third_host-->'+third_host);
        // axios.get("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user")
        //axios.get(`https://app:8080/test/users`)       
        //axios.get(`/test/users`)
