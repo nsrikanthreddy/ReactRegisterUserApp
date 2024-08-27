@@ -7,6 +7,7 @@ function Create() {
   //const [id, setId] = useState(0);
   ////const host = process.env.REACT_APP_HOST||"localhost";
   //const host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
+  const host = window.location.hostname.replace('9092','8082');
   const [name,setName]= useState("");
   const [password,setPassword]= useState("");
   const handleClick=(e)=>{
@@ -15,7 +16,8 @@ function Create() {
     //axios.post(`http://${host}:8080/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN',
     //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json','Authorization': 'Bearer YOUR_ACCESS_TOKEN', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods': 'PUT, POST, DELETE, GET' 
     //axios.post(`/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json',
-    axios.post(`http://localhost:8082/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json',
+    //axios.post(`http://localhost:8082/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json',
+    axios.post(`${host}/test/user`,{name:name, password:password}, {headers: {'Content-Type': 'application/json',
   }})
     .then((response)=>{
       console.log(response);
