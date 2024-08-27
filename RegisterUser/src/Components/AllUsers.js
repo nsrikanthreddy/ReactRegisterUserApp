@@ -6,7 +6,7 @@ function AllUsers() {
     const navigate= useNavigate();
     const[user, setUser]= useState([]);
    // const first_host = process.env.REACT_APP_HOST||"localhost"; 
-    const first_host = location.hostname;
+    const first_host = window.location.hostname;
 const second_host= document.baseURI;
 
 
