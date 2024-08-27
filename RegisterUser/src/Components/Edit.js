@@ -7,7 +7,8 @@ function Edit() {
     const[id, setId]= useState(param.id);
     const[name, setName] = useState("");
     //const host = process.env.REACT_APP_HOST||"localhost";
-    const host = window.location.hostname.replace('9092','8082');
+    const host = window.location.hostname
+        host='http://'+host.replace('9092','8082');
     
     const [password, setPassword]= useState("");
     const navigate= useNavigate();
