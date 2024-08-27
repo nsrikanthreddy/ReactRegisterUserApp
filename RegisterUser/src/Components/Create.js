@@ -8,7 +8,7 @@ function Create() {
   ////const host = process.env.REACT_APP_HOST||"localhost";
   //const host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
   let hostName = window.location.hostname
-  const host='http://'+hostName.replace('9092','8082');
+  const host='https://'+hostName.replace('9092','8082');
   const [name,setName]= useState("");
   const [password,setPassword]= useState("");
   const handleClick=(e)=>{
