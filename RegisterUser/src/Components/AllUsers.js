@@ -7,7 +7,7 @@ function AllUsers() {
     const[user, setUser]= useState([]);
    // const first_host = process.env.REACT_APP_HOST||"localhost"; 
     let hostName = window.location.hostname;
-    const host = 'http://'+hostName.replace('9092','8082');
+    const host = 'https://'+hostName.replace('9092','8082');
 //const second_host= document.baseURI;
 
 
