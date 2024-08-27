@@ -6,19 +6,19 @@ function AllUsers() {
     const navigate= useNavigate();
     const[user, setUser]= useState([]);
    // const first_host = process.env.REACT_APP_HOST||"localhost"; 
-    const first_host = window.location.hostname;
-const second_host= document.baseURI;
+    const host = window.location.hostname.replace('9092','8082');
+//const second_host= document.baseURI;
 
 
     //const third_host = window.__RUNTIME_CONFIG__.REACT_APP_HOST||"localhost"; 
     const setUserData =()=>{
-        console.log('first_host-->'+first_host);
-        console.log('second_host-->'+second_host);
+        console.log('first_host-->'+host);
+      //  console.log('second_host-->'+second_host);
         //console.log('third_host-->'+third_host);
        // axios.get("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user")
        //axios.get(`https://app:8080/test/users`)       
        //axios.get(`/test/users`)
-       axios.get(`http://localhost:8082/test/users`)
+       axios.get(`${host}/test/users`)
        .then(response => {       
           console.log(response)
           setUser(response.data)
@@ -37,7 +37,8 @@ const second_host= document.baseURI;
         //axios.delete("https://6629c5a967df268010a18ed6.mockapi.io/api/v1/user/"+userId)
         //axios.delete(`http://${host}:8080/test/user/`+userId)
         //axios.delete(`/test/user/`+userId)
-        axios.delete(`http://localhost:8082/test/user/`+userId)
+       // axios.delete(`http://localhost:8082/test/user/`+userId)
+        axios.delete(`${host}/test/user/`+userId)
         .then(response =>{
             setUserData();
         })
